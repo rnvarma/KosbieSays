@@ -1,0 +1,1 @@
+web: gunicorn KosbieSays.wsgi --log-file -
