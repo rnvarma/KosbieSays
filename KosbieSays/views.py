@@ -8,6 +8,7 @@ class HomePage(View):
     nexts = None
     start_vals = None
     start_words = None
+
     def get(self, request):
         self.get_data_cached()
         sentence = self.get_sentence()
@@ -15,7 +16,7 @@ class HomePage(View):
 
     def get_data_cached(self):
         if HomePage.nexts and HomePage.start_vals and HomePage.start_words: return
-        f = open("KosbieSays/processed_data.txt", "r")
+        f = open("KosbieSays/processed_data_clean.txt", "r")
         data = f.read()
         f.close()
         data = eval(data)
@@ -48,7 +49,7 @@ class HomePage(View):
         x = random.random()
         idx = bisect.bisect(HomePage.start_vals, x)
         result =  HomePage.start_words[idx]
-        if result == "**s** **s**":
+        if result == "**s** **s**" or result == "**s** ":
             return self.get_start()
         return result
 

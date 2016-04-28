@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'KosbieSays.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django_postgrespool',
+        'NAME': 'dcicjqmulrp9ai',
+        'USER': 'elztgirtsijvfx',
+        'PASSWORD': 'R6EL8UEDFt1b-qsKgTN8YiUL6E',
+        'HOST': 'ec2-174-129-225-160.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
+
 
 
 # Password validation
